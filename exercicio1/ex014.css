@@ -1,0 +1,29 @@
+body {
+    background-color: burlywood;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+p {
+    font-size: 20px;
+    padding-top: 16px;
+}
+
+section {
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.349);
+}
+
+#imagem {
+    width: 230px;
+    height: 230px;
+}
