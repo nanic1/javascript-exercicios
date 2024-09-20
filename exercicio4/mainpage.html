@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="ex.css">
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <section>
+        <div>
+            <input id="num" type="number" placeholder="Digite um número">
+            <input onclick="apertar()" type="button" value="Gerar Tabuada">
+        </div>
+        <div id="res">
+            <select name="tabuada" id="tab" size="10">
+
+            </select>
+        </div>
+    </section>  
+
+    <footer>
+
+    </footer>
+
+    <script>
+        function apertar() {
+            var numb = document.getElementById('num')
+            var tabu = document.getElementById('tab')
+
+            if (numb.value.length == 0) {
+                window.alert('Por favor, digite um número')
+            } else {
+                var n = Number(numb.value)
+                var c = 1
+                tabu.innerHTML = ' '
+                while (c <= 10) {
+                    var item = document.createElement('option')
+                    item.text = `${n} x ${c} = ${n * c}`
+                    tabu.appendChild(item)
+                    c++
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

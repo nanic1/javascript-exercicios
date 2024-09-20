@@ -13,10 +13,10 @@
 
     <section>
         <div>
-            <input type="number" placeholder="Início"><br>
-            <input type="number" placeholder="Fim"><br>
-            <input type="number" placeholder="Passo"><br>
-            <input type="button" value="Contar">
+            <input id="for1" type="number" placeholder="Início"><br>
+            <input id="for2" type="number" placeholder="Fim"><br>
+            <input id="for3" type="number" placeholder="Passo"><br>
+            <input onclick="apertar()" type="button" value="Contar">
             <p id="contTexto"></p>
         </div>
         <div id="res">
@@ -28,5 +28,38 @@
 
     </footer>
 
+    <script>
+        function apertar() {
+            var inicio = document.getElementById('for1')
+            var fim = document.getElementById('for2')
+            var passo = document.getElementById('for3')
+            var escrever = document.getElementById('res')
+
+            if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+                window.alert("[ERRO] faltam dados")
+            } else {
+                escrever.style.textAlign = 'center'
+                escrever.innerHTML = 'Contando... '
+                var i = Number(inicio.value)
+                var f = Number(fim.value)
+                var p = Number(passo.value)
+
+                if (p <= 0) {
+                    window.alert('Passo inválido! Considerando PASSO 1')
+                    p = 1
+                }
+                
+                if (i < f) {
+                    for (var c = i; c <= f; c += p) {
+                        escrever.innerHTML += `${c} `
+                    } 
+                } else {
+                    for (var c = i; c >= f; c -= p) {
+                        escrever.innerHTML += `${c} `
+                }
+            }
+        }
+    }
+    </script>
 </body>
 </html>
